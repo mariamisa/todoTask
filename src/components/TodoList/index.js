@@ -4,7 +4,7 @@ import AddToDoForm from "../AddToDoForm";
 import Todo from "../Todo";
 
 export default function TodoList() {
-  const { todos, addNewTodo, removeTodo, doneTodo } = useTodos();
+  const [todos, addNewTodo, removeTodo, doneTodo] = useTodos();
   const [showInput, setShowInput] = useState(false);
 
   const completedTodos = todos.filter((todo) => todo.completed).length;

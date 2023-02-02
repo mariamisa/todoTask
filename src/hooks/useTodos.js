@@ -37,7 +37,7 @@ const TodoList = () => {
     setTodos(updateToDone);
   };
 
-  return { todos, addNewTodo, removeTodo, doneTodo };
+  return [todos, addNewTodo, removeTodo, doneTodo];
 };
 
 export default TodoList;
