@@ -11,7 +11,7 @@ export default function TodoList() {
 
   return (
     <div className="border-solid border-2 bg-white w-96 py-2 px-4 rounded-lg mt-60 mb-96">
-      <h1 className="font-bold text-black-600 text-2xl my-2 underline underline-offset-8 mb-10">
+      <h1 className="font-bold text-black-600 text-lg my-2 border-b-2 mb-4 py-2">
         {completedTodos} / {todos.length} ToDo List completed
       </h1>
       {todos?.map((todo) => (
