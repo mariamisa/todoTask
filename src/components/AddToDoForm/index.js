@@ -8,7 +8,7 @@ const AddToDoForm = ({ addNewTodo }) => (
       validate={(values) => {
         const errors = {};
         if (!values.task) {
-          errors.task = "Required";
+          errors.task = "Please add a todo!!";
         }
         return errors;
       }}
@@ -28,35 +28,26 @@ const AddToDoForm = ({ addNewTodo }) => (
         isSubmitting,
       }) => (
         <form onSubmit={handleSubmit} className="flex items-end mb-3">
-          <div className="flex items-center w-full max-w-md mb-3 seva-fields formkit-fields">
+          <div className="grid gap-4 grid-cols-2 py-4">
             <input
               type="task"
               name="task"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.task}
-              className="rounded-full border-2 border-rose-600"
+              className="bg-gray-50 py-2 px-4 border border-gray-300 text-gray-900 rounded-lg"
               placeholder="todo"
-              style={{
-                backgroundColor: "#ddd",
-                padding: "10px",
-                borderRadius: "10px",
-              }}
             />
-            {errors.task && touched.task && errors.task}
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-6 py-2 rounded bg-slate-400 hover:bg-slate-500 text-slate-100"
-              style={{
-                backgroundColor: "blue",
-                color:'white',
-                padding: "10px",
-                borderRadius: "10px",
-              }}
+              className="flex-1 bg-blue-500 hover:bg-blue-400  py-2 px-4 text-white m-0 rounded-lg"
             >
-              add todo
-            </button>{" "}
+              Add Todo
+            </button>
+            <span className="text-red-600 px-2 font-semibold">
+              {errors.task && touched.task && errors.task}
+            </span>
           </div>
         </form>
       )}

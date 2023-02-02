@@ -14,7 +14,7 @@ const TodoList = () => {
     setTodos([
       ...todos,
       {
-        id: todos.length + 1,
+        id: Date.now(), // this is not idle but the id should be unique from db
         text: todo,
       },
     ]);
