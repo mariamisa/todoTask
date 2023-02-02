@@ -16,6 +16,7 @@ const TodoList = () => {
       {
         id: Date.now(), // this is not idle but the id should be unique from db
         text: todo,
+        completed: false,
       },
     ]);
   };
@@ -25,7 +26,18 @@ const TodoList = () => {
     setTodos(updatedTodos);
   };
 
-  return { todos, addNewTodo, removeTodo };
+  const doneTodo = (id) => {
+    const updateToDone = todos.map((todo) => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed;
+        return todo;
+      }
+      return todo;
+    });
+    setTodos(updateToDone);
+  };
+
+  return { todos, addNewTodo, removeTodo, doneTodo };
 };
 
 export default TodoList;

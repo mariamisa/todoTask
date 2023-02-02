@@ -41,7 +41,7 @@ const AddToDoForm = ({ addNewTodo }) => (
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1 bg-blue-500 hover:bg-blue-400  py-2 px-4 text-white m-0 rounded-lg"
+              className="flex-1 bg-slate-600	bg-slate-600  py-2 px-4 text-white m-0 rounded-lg"
             >
               Add Todo
             </button>
